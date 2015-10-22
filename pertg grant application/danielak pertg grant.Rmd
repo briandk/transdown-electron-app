@@ -1,0 +1,85 @@
+---
+title: "Transdown: A lightweight transcript syntax"
+author: "Brian Danielak"
+date: "November 4, 2014"
+output: rmarkdown::tufte_handout
+---
+
+## My proposal for an **Innovation Grant**
+
+I[^13] would like to develop **Transdown**[^1], a sofware ecosystem[^5] for presenting transcript-based data. Transdown lets researchers write plain, human-readable transcript like this:
+
+```
+Rebecca's Programming Gestures
+------------------------------
+
+[00:33:33.25] Rebecca: and then my thinking at least, is
+you should be able to, um, say that "star p of i"
+/mmhmm/ equals, uh, the title, and then you just do i++,
+so then it'll {{move to the next one}} !{makes looping
+gesture with left hand}[1] /OK/
+
+[00:34:00.12] Rebecca: and you just keep {{saving each
+of the pointers}} !{left hand makes horizontal chops in
+the air, like rungs down a ladder}[2]
+
+[1]: rebecca1.jpg
+[2]: rebecca2.png
+```
+
+and turns that text into rich web display like ***this***:
+
+\begin{figure}
+\includegraphics[width=0.90\textwidth]
+{transcriptulator-rebecca}
+\caption{A Transdown rendering of the above text that displays in any modern web broswer. The entire idea of Transdown is that users simply write human-readable plaintext, conform to a small set of stylistic conventions, and get beautifully-rendered displays like this. Now imagine how awesome this would look if---instead of static images---these were animated GIFs. Totally possible with Transdown.}
+\end{figure}
+
+## Plan: What I'll do
+
+I've already developed a proof-of-concept web view to show this can work.[^2] The main tasks of the project are:
+
+- Standardize a specification for Transdown. We'll have to decide what kinds of features of transcript to support, and more importantly what we won't support.
+- Build a back-end parser to convert Transdown text into formatted output options. Initially, we'll focus on one-way HTML: building a parser to turn plain text into a rich web view. Later, if possible, we can build this out to add support for \LaTeX\ and Word.
+- Build a dingus[^7] to show users how Transdown syntax gets rendered, following the models of `Fountain`[^8] and `Common Markdown`[^9].
+- Develop a front-end to make it easy for users to drop in Transdown and get out a webpage. One possibility is to follow the iPython Notebook Viewer model[^11].
+
+
+## Motivation: How does this help?
+
+1. Transdown makes it easy for researchers to create beautiful, web-based presentations of transcript data
+2. Researchers can embed images and animations into transcript displays with ease
+3. It offers a "write once, run multiple places"[^6] approach. Researchers can write one transcript file in Transdown and instantly convert for presenting on the web, embedding in a \LaTeX\ file, or dropping into a Word document.
+4. It promotes Reproducible Research[^12]. By making it dead-easy for researchers to share media-rich transcript, we lower the barriers for sharing data.
+
+## Need: Who else has money?
+
+Honestly, I'm not sure. If you know other places I could ask, I'd appreciate it!
+
+## Budget: How much money, and where else is it getting spent?
+
+I think this software ecosystem should exist. I'm willing to build it, and I think I have the right combination of qualitative research experience and software development experience to do it. Moreover, I think it the Transdown ecosystem should be available ***freely*** to anyone who wants to use or modify it under an open-source MIT license.[^10] I'm asking for $2000 to cover my time developing Transdown. 
+
+
+[^1]: Working title
+[^2]: To see a live demo, head to <http://briandk.com/transcript2/>
+[^3]: Hypertext Markup Language
+[^4]: Split-infinitive alert(!)
+[^5]: Transdown takes both its name and design cues from John Gruber's `Markdown`, an ecosystem for generating rich documents from simple, human-readable plain text. <http://daringfireball.net/projects/markdown/basics>. I have to stress: **Transdown is plaintext**. You can open a Transdown file in any text editor, even Notepad.
+[^6]: I plan to base Transdown's back-end on `Pandoc`, a powerful open-source document conversion system <http://johnmacfarlane.net/pandoc/>
+[^7]: An interactive web sandbox for users to test syntax. 
+[^8]: http://fountain.io/dingus
+[^9]: http://spec.commonmark.org/dingus.html
+[^10]: http://opensource.org/licenses/MIT
+[^11]: http://nbviewer.ipython.org/faq
+[^12]: See, for example, rOpenSci's work on reproducible analysis of datasets: <http://ropensci.org/blog/2014/06/09/reproducibility/>
+[^13]: Brian Danielak, Northwestern University, `brian.danielak@northwestern.edu`. Supervisor: Reed Stevens `reed-stevens@northwestern.edu`
+
+
+
+
+
+
+
+
+
