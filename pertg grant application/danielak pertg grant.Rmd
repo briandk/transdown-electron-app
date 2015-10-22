@@ -1,81 +1,49 @@
 ---
 title: "Transdown: A lightweight transcript syntax"
 author: "Brian Danielak"
-date: "November 4, 2014"
-output: rmarkdown::tufte_handout
+date: "October 22, 2015"
+output: 
+  pdf_document:
+    md_extensions: +implicit_figures
 ---
 
-## My proposal for an **Innovation Grant**
+## My proposal and Budget for an **Innovation Grant**
 
-I[^13] would like to develop **Transdown**[^1], a sofware ecosystem[^5] for presenting transcript-based data. Transdown lets researchers write plain, human-readable transcript like this:
+I'm[^1] requesting **$2000** in funding to extend my previous PERTG grant work ([Transdown](www.transdown.org)) and develop **Transcriptase** a free, cross-platform application for editing and sharing transcripts. All of my grant funding would go to pay for my software development time (40 hours at $50/hr).
 
-```
-Rebecca's Programming Gestures
-------------------------------
+## What I accomplished with my past PERTG funding
 
-[00:33:33.25] Rebecca: and then my thinking at least, is
-you should be able to, um, say that "star p of i"
-/mmhmm/ equals, uh, the title, and then you just do i++,
-so then it'll {{move to the next one}} !{makes looping
-gesture with left hand}[1] /OK/
+All of my Fall 2014 funding ($750) went to pay for my individual software development hours. So far, I've been able to:
 
-[00:34:00.12] Rebecca: and you just keep {{saving each
-of the pointers}} !{left hand makes horizontal chops in
-the air, like rungs down a ladder}[2]
+- Standardize a specification for Transdown. We’ve decided on a basic feature set including speakers, timestamps, speech, and rich media inclusion
+- Build a back-end parser to convert Transdown text into formatted output options. Initially, that parser converts plaintext one-way to HTML. This parser is hosted on GitHub under an extremely permissive MIT License: anyone can use the transdown.js JavaScript parser for free.
+- Design a professional-grade fully-responsive website: [Transdown.org](www.transdown.org), to showcase information, videos, and the source code for Transdown.
+- Build a live sandbox where users can try out Transdown syntax and see the results rendered in real-time
+- Create a series of videos to showcase the power, flexibility, and ease-of-use of Transdown.
 
-[1]: rebecca1.jpg
-[2]: rebecca2.png
-```
+![Transdown.org's syntax guide](images/2015-10-22 - transdown syntax 10-22-15, 4.43.37 PM.png)
 
-and turns that text into rich web display like ***this***:
+![A mockup of **Transcriptase**, the application I'm proposing to build using this PERTG funding.](images/2015-10-22 - transcriptase prototype 10-22-15, 4.48.10 PM.png)
 
-\begin{figure}
-\includegraphics[width=0.90\textwidth]
-{transcriptulator-rebecca}
-\caption{A Transdown rendering of the above text that displays in any modern web broswer. The entire idea of Transdown is that users simply write human-readable plaintext, conform to a small set of stylistic conventions, and get beautifully-rendered displays like this. Now imagine how awesome this would look if---instead of static images---these were animated GIFs. Totally possible with Transdown.}
-\end{figure}
 
 ## Plan: What I'll do
 
-I've already developed a proof-of-concept web view to show this can work.[^2] The main tasks of the project are:
+I'll create **Transcriptase**: a lightweight application that will:
 
-- Standardize a specification for Transdown. We'll have to decide what kinds of features of transcript to support, and more importantly what we won't support.
-- Build a back-end parser to convert Transdown text into formatted output options. Initially, we'll focus on one-way HTML: building a parser to turn plain text into a rich web view. Later, if possible, we can build this out to add support for \LaTeX\ and Word.
-- Build a dingus[^7] to show users how Transdown syntax gets rendered, following the models of `Fountain`[^8] and `Common Markdown`[^9].
-- Develop a front-end to make it easy for users to drop in Transdown and get out a webpage. One possibility is to follow the iPython Notebook Viewer model[^11].
+- Be free for anyone to use
+- Run on Windows, OS X, and Linux
+- Provide a beautiful, tabular preview of your transcript that updates live as you type
+- Allow users to export transcript into HTML, PDF, and Word formats
 
 
 ## Motivation: How does this help?
 
-1. Transdown makes it easy for researchers to create beautiful, web-based presentations of transcript data
+1. Transcriptase makes it easy for researchers to create beautiful, web-based presentations of transcript data
 2. Researchers can embed images and animations into transcript displays with ease
-3. It offers a "write once, run multiple places"[^6] approach. Researchers can write one transcript file in Transdown and instantly convert for presenting on the web, embedding in a \LaTeX\ file, or dropping into a Word document.
-4. It promotes Reproducible Research[^12]. By making it dead-easy for researchers to share media-rich transcript, we lower the barriers for sharing data.
+3. It offers a "write once, run multiple places"[^6] approach. Researchers can write one transcript file in Transcriptase and instantly convert for presenting on the web, embedding in a \LaTeX\ file, or dropping into a Word document.
+4. Transcriptase would be free for anyone to use, which helps put powerful tools in the hands of researchers who might not otherwise be able to afford more expensive, properietary solutions.
 
-## Need: Who else has money?
-
-Honestly, I'm not sure. If you know other places I could ask, I'd appreciate it!
-
-## Budget: How much money, and where else is it getting spent?
-
-I think this software ecosystem should exist. I'm willing to build it, and I think I have the right combination of qualitative research experience and software development experience to do it. Moreover, I think it the Transdown ecosystem should be available ***freely*** to anyone who wants to use or modify it under an open-source MIT license.[^10] I'm asking for $2000 to cover my time developing Transdown. 
-
-
-[^1]: Working title
-[^2]: To see a live demo, head to <http://briandk.com/transcript2/>
-[^3]: Hypertext Markup Language
-[^4]: Split-infinitive alert(!)
-[^5]: Transdown takes both its name and design cues from John Gruber's `Markdown`, an ecosystem for generating rich documents from simple, human-readable plain text. <http://daringfireball.net/projects/markdown/basics>. I have to stress: **Transdown is plaintext**. You can open a Transdown file in any text editor, even Notepad.
-[^6]: I plan to base Transdown's back-end on `Pandoc`, a powerful open-source document conversion system <http://johnmacfarlane.net/pandoc/>
-[^7]: An interactive web sandbox for users to test syntax. 
-[^8]: http://fountain.io/dingus
-[^9]: http://spec.commonmark.org/dingus.html
-[^10]: http://opensource.org/licenses/MIT
-[^11]: http://nbviewer.ipython.org/faq
-[^12]: See, for example, rOpenSci's work on reproducible analysis of datasets: <http://ropensci.org/blog/2014/06/09/reproducibility/>
-[^13]: Brian Danielak, Northwestern University, `brian.danielak@northwestern.edu`. Supervisor: Reed Stevens `reed-stevens@northwestern.edu`
-
-
+[^1]: Brian A. Danielak, Ph.D., <danie297@msu.edu>. I'm a postdoctoral research associate at Michigan State University in Computational Mathematics, Science, and Engineering (CMSE), supervised by Dr. Brian W. O'Shea.
 
 
 
