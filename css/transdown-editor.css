@@ -5,3 +5,12 @@
     bottom: 0;
     left: 0;
 }
+
+table td {
+  table-layout: fixed;
+  width: 100%
+}
+
+.accompanying-media {
+  width: 200px;
+}
