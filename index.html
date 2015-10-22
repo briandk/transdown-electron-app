@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Photon</title>
+    <title>Transcriptase</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.min.css">
     <link rel="stylesheet" href="css/transdown-editor.css">
-    <link rel="stylesheet" href="bower_components/video.js/dist/video-js.css">
 
-    <!-- Javascript -->
-    <script src="js/menu.js" charset="utf-8"></script>
   </head>
   <body>
     <div class="window">
 
       <!-- .toolbar-header sits at the top of your app -->
       <header class="toolbar toolbar-header">
-        <h1 class="title">Photon</h1>
+        <h1 class="title">Transcriptase</h1>
       </header>
 
       <!-- Your app's content goes inside .window-content -->
       <div class="window-content">
         <div class="pane-group">
           <div class="pane">
-            <video id="example_video_1" 
-                   class="video-js vjs-default-skin" 
-                   controls preload="none" 
-                   width="100%"
-                   data-setup="{}">
-              <source src="Iron%20Man%203%20Teaser%20Trailer%20UK%20-%20Official%20Marvel%20_%20HD-5EjG-1U3wqA.mp4" type='video/mp4' />
-            </video>
+            <div>
+              <video id="example_video_1" 
+                     class="video-js vjs-default-skin"
+                     poster="images/RebeccaWellsInterview20120406_00342100.jpg"
+                     controls preload="none" 
+                     width="100%"
+                     data-setup="{}">
+                <source src="iron-man.mp4" type="video/mp4"/>
+              </video>
+            </div>
           </div>
 
           <div class="pane">
-            <div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}           </div>
+            <div id="editor">
+
+### Rebecca's gestural pseudo-coding    
+
+[33:33] Rebecca: and then my thinking at least, is you should be able to, um, say that "star p of i" /mmhmm/ equals, uh, the title, and then you just do i++, so then it'll {{move to the next one}} ![makes looping gesture with left hand][1] /OK/
+
+[34:00] Rebecca: and you just keep {{saving each of the pointers}} ![left hand makes horizontal chops in the air, like rungs down a ladder][2]
+
+[1]: images/rebecca1.jpg
+[2]: images/rebecca2.png
+}
+            </div>
           </div>
           <div class="pane">
 			<div id="live-preview">  <table class="table
@@ -88,8 +96,7 @@
     <script>
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/monokai");
-        editor.getSession().setMode("ace/mode/javascript");
+        editor.getSession().setUseWrapMode(true);
     </script>
-    <script src="../../video.min.js"></script>
   </body>
 </html>

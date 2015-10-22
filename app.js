@@ -19,8 +19,8 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 600,
-    height: 300,
+    width: 1200,
+    height: 600,
     'min-width': 500,
     'min-height': 200,
     'accept-first-mouse': true,
